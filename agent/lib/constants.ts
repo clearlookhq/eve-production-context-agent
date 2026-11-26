@@ -8,7 +8,7 @@ export const CLEARLOOK_URL = (
   process.env.CLEARLOOK_URL ?? "https://app.clearlook.dev"
 ).replace(/\/$/u, "");
 /**
- * A Clearlook service key with read scopes only (Settings › API keys). Set it for webhook and
+ * A Clearlook service key with only "Ask questions (query)" (Settings › API keys). Set it for webhook and
  * channel-watch runs, which have no person to sign in. Without it, the agent signs in through
  * Vercel Connect (CLEARLOOK_CONNECTOR), which works only in sessions a Slack user starts.
  */

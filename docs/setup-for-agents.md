@@ -43,7 +43,7 @@ pnpm exec eve link --project <project-name> --team <team> --non-interactive
 <!--AGENTS: please pause and mention this before proceeding-->
 
 - When setting up the GitHub connector, instruct the user to prefer checking "readonly" on the permissions for maximum security.
-- For Clearlook, ask the user to make a service key with read scopes only (Settings › API keys) and add it themselves with `vercel env add CLEARLOOK_API_KEY production --sensitive`. Do not pass the key to an agent or put it in a command argument. Also set `CLEARLOOK_PROJECT` to the project to watch.
+- For Clearlook, ask the user to make a service key with only **Ask questions (query)** ticked (Settings › API keys) and add it themselves with `vercel env add CLEARLOOK_API_KEY production --sensitive`. Do not pass the key to an agent or put it in a command argument. Also set `CLEARLOOK_PROJECT` to the project to watch.
 
 ```bash
 vercel connect create slack --name sre --triggers

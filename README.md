@@ -27,7 +27,7 @@ Select [**Deploy with Vercel**][deploy-with-vercel]. It clones this repository, 
 
 | Variable | Required | What it is |
 | --- | --- | --- |
-| `CLEARLOOK_API_KEY` | For webhook and channel-watch runs | A Clearlook service key with read scopes only: Settings › API keys › New key, with read access to analytics, errors, uptime and replays. |
+| `CLEARLOOK_API_KEY` | For webhook and channel-watch runs | A Clearlook service key with only **Ask questions (query)** ticked: Settings › API keys › New key. It reads analytics, errors, server logs and uptime, and changes nothing. |
 | `CLEARLOOK_PROJECT` | No | The project to investigate when a request names none (its slug, name or id). |
 | `CLEARLOOK_URL` | No | Your own Clearlook server. Default `https://app.clearlook.dev`. |
 
@@ -88,7 +88,7 @@ pnpm test
 ## Troubleshooting
 
 - **Clearlook asks for sign-in in a webhook run:** set `CLEARLOOK_API_KEY`; webhook runs can't use a person's sign-in.
-- **A Clearlook tool says it isn't allowed:** the key is missing a scope. Give it read access to analytics, errors, uptime and replays.
+- **A Clearlook tool says it isn't allowed:** the key needs **Ask questions (query)**. Replay tools work only when a person signs in through Vercel Connect; service keys don't read recordings.
 - **A webhook returns `401`:** the caller and the deployment must use the same `WEBHOOK_SECRET`.
 
 ## License
